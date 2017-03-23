@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>新增问卷</title>
+</head>
+
+<body>
+<form action="saveQuestion" method="post">
+  问卷名称:
+  <input type="text" name="vote"/>
+  <br/> 截止时间：
+  <input type="date"/>
+  <div id="div" class="div" style="background-color: aqua;">
+    <p id="question" class="question">
+      问题1：
+      <input type="text" name="question"/>
+    </p>
+    <p id="selector" class="selector">
+      选项1：
+      <input type="text" name="selector">
+      <input class='select-group' type="button" data-selecttype='add' value="增加选项"/>
+      <input class='select-group' type="button" data-selecttype='delete' value="删除选项"/>
+    </p>
+  </div>
+  <div id="buttionDiv" class="buttionDiv">
+    <input type="button"  value="增加问题"/>
+    <input type="button"  value="删除问题"/>
+    <input type="submit" value="保存">
+  </div>
+</form>
+<script src="./bundle.js"></script>
+</body>
+
+</html>
+
