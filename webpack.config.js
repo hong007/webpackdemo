@@ -14,6 +14,7 @@ module.exports = {
   // entry: "./app/index.js", // 入口文件
   // entry: "./app/root.js", // 入口文件
   entry: "./app/index02.js", // 入口文件
+  entry: "./app/index02.js", // 入口文件
   // entry: APP_PATH, // 入口文件
 
   // 输出文件 build下的bundle.js

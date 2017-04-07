@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>CSS3Border-box</title>
+  <script>
+    (function (doc, win) {
+      var docEl = doc.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        recalc = function () {
+          var clientWidth = docEl.clientWidth;
+          if (!clientWidth) return;
+          if (clientWidth >= 750) {
+            docEl.style.fontSize = '100px';
+            console.log('可视窗口宽度是 ', document.documentElement.clientWidth, '  基本单位是  ', docEl.style.fontSize);
+
+          } else {
+            docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+            console.log('可视窗口宽度是 ', document.documentElement.clientWidth, '  基本单位是  ', docEl.style.fontSize);
+
+          }
+//          alert(document.documentElement.clientHeight + '  +' + window.screen.availHeight)
+        };
+
+      if (!doc.addEventListener) return;
+      win.addEventListener(resizeEvt, recalc, false);
+      doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+  </script>
+</head>
+
+<body>
+<div class="slider-item slider-item1">
+  <div class="slider-item1-top txtct ">
+    <div class="top-img-area clearfix">
+      <img class="fl logo" src="./app/imgs/logo.png" alt="logo"/>
+      <img class="fr en-cn" src="./app/imgs/en-cn.png" alt="language"/>
+    </div>
+    <p class="title1">
+      捷雁<span>TR7</span>全新发布
+    </p>
+    <p class="title2">物流无人机的新标杆</p>
+  </div>
+  <div class="section2">
+
+  </div>
+  <!--<img class="item-one-img" src="./app/imgs/item-one-img.png" alt="pro"/>-->
+  <div class="item-one-items txtct">
+    <div class="item-one-item">
+      <p class="i-title txtct">运力升级</p>
+      <!--<div class="advantages">-->
+      <!--<div class="advantage">-->
+      <!--<div class="advantage-data">-->
+      <!--<span>7</span>kg-->
+      <!--</div>-->
+      <!--<p>载重</p>-->
+      <!--</div>-->
+      <!--<div class="advantage">-->
+      <!--<div class="advantage-data">-->
+      <!--<span>30</span>km-->
+      <!--</div>-->
+      <!--<p>续航</p>-->
+      <!--</div>-->
+      <!--<div class="advantage">-->
+      <!--<div class="advantage-data">-->
+      <!--<span>25</span>L-->
+      <!--</div>-->
+      <!--<p>货仓容积</p>-->
+      <!--</div>-->
+      <!--</div>-->
+    </div>
+    <div class="item-one-item">
+      <p class="i-title txtct">运力升级</p>
+      <!--<div class="others">-->
+      <!--<div class="i-other"><span></span>自主航线规划</div>-->
+      <!--<div class="i-other"><span></span>通用机器视觉</div>-->
+      <!--<div class="i-other"><span></span>动态柔性控制</div>-->
+      <!--</div>-->
+    </div>
+  </div>
+</div>
+<!--<script src="./bundle.js"></script>-->
+</body>
+<style>
+  @charset "UTF-8";
+  /* 初始化代码 */
+
+  /*body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, nav, section {*/
+  /*padding: 0;*/
+  /*padding: 0;*/
+  /*border: 0;*/
+  /*}*/
+
+  /*table {*/
+  /*border-collapse: collapse;*/
+  /*border-spacing: 0;*/
+  /*}*/
+
+  /*img, a img {*/
+  /*border: 0;*/
+  /*}*/
+
+  /*a {*/
+  /*color: #0381e3;*/
+  /*outline: medium none;*/
+  /*text-decoration: none;*/
+  /*!*font-size: 1.4rem;*!*/
+  /*star: expression(this.onFocus=this.blur());*/
+  /*}*/
+
+  /*a:hover {*/
+  /*text-decoration: none;*/
+  /*}*/
+
+  /*a, img {*/
+  /*-webkit-touch-callout: none;*/
+  /*}*/
+
+  /*label {*/
+  /*cursor: pointer;*/
+  /*}*/
+
+  /*ul li, .ol li {*/
+  /*list-style: none;*/
+  /*}*/
+
+  /*em, cite, i {*/
+  /*font-style: normal;*/
+  /*}*/
+
+  /*button {*/
+  /*background: none;*/
+  /*border: none;*/
+  /*outline: none;*/
+  /*}*/
+
+  /*button:focus {*/
+  /*outline: none;*/
+  /*}*/
+
+  /*input::-webkit-outer-spin-button,*/
+  /*input::-webkit-inner-spin-button {*/
+  /*-webkit-appearance: none !important;*/
+  /*padding: 0;*/
+  /*}*/
+
+  /*input[type="number"] {*/
+  /*-moz-appearance: textfield;*/
+  /*}*/
+
+  /*input[type="text"],*/
+  /*input[type="number"],*/
+  /*textarea {*/
+  /*-webkit-appearance: none;*/
+  /*}*/
+
+  /*input:focus, textarea:focus {*/
+  /*outline: none;*/
+  /*}*/
+
+  /*input::-ms-clear {*/
+  /*display: none;*/
+  /*}*/
+
+  /*textarea {*/
+  /*resize: none;*/
+  /*}*/
+
+  html, body {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    background: red;
+  }
+
+  html {
+    font-size: 100px;
+    overflow: hidden;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  }
+
+  *, *:before, *:after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  }
+
+  /* 通用样式 */
+  .clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+  }
+
+  .clearfix {
+    zoom: 1;
+  }
+
+  .fl {
+    float: left !important;
+  }
+
+  .fr {
+    float: right !important;
+  }
+
+  .txtct {
+    text-align: center;
+  }
+
+  .txtlt {
+    text-align: left;
+  }
+
+  .txtrt {
+    text-align: right;
+  }
+
+  .app {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  }
+
+  .slider-item {
+    /*overflow: hidden;*/
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  }
+
+  .slider-item .slider-item1-top {
+    /*padding: 0.45rem 0.39rem 0;*/
+    height: 3.8rem;
+    background-color: #100;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  }
+
+  .slider-item .slider-item1-top .logo {
+    width: 4.61rem;
+    height: 0.5rem;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  }
+
+  .slider-item .slider-item1-top .en-cn {
+    width: 1.45rem;
+    height: 0.54rem;
+  }
+
+  .slider-item1 {
+    color: #313131;
+  }
+
+  .slider-item1 .slider-item1-top {
+    /*padding: 0.45rem 0.39rem 0;*/
+  }
+
+  .slider-item1 .slider-item1-top .logo {
+    width: 4.61rem;
+    height: 0.5rem;
+  }
+
+  .slider-item1 .slider-item1-top .en-cn {
+    width: 1.45rem;
+    height: 0.54rem;
+  }
+
+  .slider-item1 .slider-item1-top .title1 {
+    padding-top: 0.67rem;
+    font-size: 18px;
+    letter-spacing: 4px;
+    font-weight: 600;
+  }
+
+  .slider-item1 .slider-item1-top .title1 span {
+    color: #FFCB39;
+  }
+
+  .slider-item1 .slider-item1-top .title2 {
+    font-size: 16px;
+    padding: 0.17rem 0 0.38rem;
+    font-weight: 100;
+  }
+
+  .slider-item1 .item-one-img {
+    width: 100%;
+    height: 4.5rem;
+  }
+
+  .section2 {
+    width: 100%;
+    height: 4.5rem;
+    background-color: #f10;
+  }
+
+  .slider-item1 .item-one-items {
+    /*padding-top: 0.28rem;*/
+    font-size: 14px;
+    height: 5.04rem;
+    background-color: #0f0;
+  }
+
+  .slider-item1 .item-one-items .item-one-item .i-title {
+    font-weight: 600;
+    font-size: 17px;
+    position: relative;
+  }
+
+  .slider-item1 .item-one-items .item-one-item .i-title:after {
+    content: '';
+    display: block;
+    width: 0.6rem;
+    height: 0.03rem;
+    background-color: #FFCB39;
+    position: absolute;
+    bottom: -0.19rem;
+    left: 50%;
+    padding-left: -0.3rem;
+  }
+
+  .slider-item1 .item-one-items .advantages {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 0.56rem 0.96rem;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-line-pack: justify;
+    align-content: space-between;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+  }
+
+  .slider-item1 .item-one-items .advantages .advantage .advantage-data {
+    width: 1.22rem;
+    height: 1.22rem;
+    line-height: 1.22rem;
+    border-radius: 100%;
+    border: 1px solid #5D5D5D;
+  }
+
+  .slider-item1 .item-one-items .advantages .advantage .advantage-data span {
+    font-size: 18px;
+  }
+
+  .slider-item1 .item-one-items .advantages .advantage p {
+    padding-top: 0.28rem;
+  }
+
+  .slider-item1 .item-one-items .others {
+    padding-top: 0.50rem;
+    width: 6.46rem;
+    padding: 0 auto;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-line-pack: justify;
+    align-content: space-between;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+  }
+
+  .slider-item1 .item-one-items .others .i-other {
+    display: inline-block;
+    font-weight: normal;
+    height: 0.36rem;
+    line-height: 0.36rem;
+  }
+
+  .slider-item1 .item-one-items .others .i-other span {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 100%;
+    background-color: #313131;
+    padding: 0 5px;
+  }
+</style>
+
+</html>
+
